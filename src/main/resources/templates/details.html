@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" layout:decorate="main_layout.html"
+>
+    <div layout:fragment="siteContent">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <form action="/save-music" method="post" th:if="${muzyka!=null}">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Name: </label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required
+                                   th:value="${muzyka.name}">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <label>Author: </label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="author" placeholder="Author"
+                                   th:value="${muzyka.author}" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <label>Duration: </label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="duration" placeholder="Duration"
+                                   th:value="${muzyka.duration}" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button class="btn btn-success">SAVE MUSIC</button>
+                        </div>
+                    </div>
+                </form>
+                <h4 th:if="${muzyka==null}" class="text-center">
+                    MUSIC NOT FOUND:(
+                </h4>
+            </div>
+        </div>
+    </div>
+</html>

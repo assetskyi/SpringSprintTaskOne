@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+>
+  <head th:insert="bootstrap.html">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+  <body>
+  <div class="container-fluid">
+    <div th:insert="navbar.html">
+    </div>
+  </div>
+  <div class="container mt-4" style="min-height: 800px">
+    <div layout:fragment="siteContent"></div>
+  </div>
+  <div th:insert="footer.html"></div>
+  </body>
+</html>

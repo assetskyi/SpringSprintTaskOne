@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" layout:decorate="main_layout.html"
+>
+    <div layout:fragment="siteContent">
+        <table class="table table-stripped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SURNAME</th>
+                <th>EXAM</th>
+                <th>MARK</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student:${students}" th:style="${(student.getExam()>=50)?'color:green;':'color:red;'}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.getSurname()}"></td>
+                <td th:text="${student.getExam()}"></td>
+                <td th:text="${student.getMark()}"></td>
+<!--                <td>-->
+<!--                    <a th:href="@{'/details/' + ${muz.id}}" class="btn btn-primary">DETAILS</a>-->
+<!--                </td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</html>
